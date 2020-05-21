@@ -1,7 +1,7 @@
 **peds_heart_sound_analysis**
 
  ```
-This is an algorithm for the classification of pediatric heart sounds
+This is a module for the classification of pediatric heart sounds
 ```
 
 **directory_sorting.py**
