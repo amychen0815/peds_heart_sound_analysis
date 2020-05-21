@@ -1,6 +1,6 @@
 # peds_heart_sound_analysis
 
-Classification of pediatric heart sounds
+## This is an algorithm for the classification of pediatric heart sounds
 
 
 **directory_sorting.py**
