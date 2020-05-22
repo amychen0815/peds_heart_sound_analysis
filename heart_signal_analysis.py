@@ -53,10 +53,6 @@ def shannon_energy(dataset, sr):
 
 	return spaceholder
 
-def sh_E (filtered):
-
-	#normalize and sharpen difference
-	X_norm = X/max([abs(e) for e in X])
 
 
 def preprocess(audiofile):
