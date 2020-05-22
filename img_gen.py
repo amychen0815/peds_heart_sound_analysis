@@ -59,7 +59,13 @@ def sound_to_spec(audiofile):
     #truncate filtered X
     start = 0
     end = 30 #seconds
-    input_audio = truncate(sample, start, end)
+    
+    try:
+        input_audio = truncate(filtered, start, end)
+        filtered = input_audio
+    except:
+        pass
+    
     
     """
     #regular spectrogram (I personally can't see anything so commenting out for now)
@@ -73,7 +79,7 @@ def sound_to_spec(audiofile):
     hop_length = 512
     n_mels = 128
     
-    S = librosa.feature.melspectrogram(input_audio, sr=sr, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels)
+    S = librosa.feature.melspectrogram(filtered, sr=sr, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels)
     S_DB = librosa.power_to_db(S, ref=np.max)
     plt.figure();
     #add x_axis='time', y_axis='mel' in the function to see x = Time, y = Hertz
