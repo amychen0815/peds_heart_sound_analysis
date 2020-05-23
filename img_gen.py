@@ -87,8 +87,8 @@ def sound_to_spec(audiofile):
     
     
     #saving generated pic to folder
-    plt.savefig(audiofile[:-4] + '.png',transparent = True)
-
+    plt.savefig(audiofile[:-4] + '.png',transparent = True);
+    plt.close();
 
 #Run through all sounds in the folder
 current_directory = os.getcwd()
@@ -96,4 +96,4 @@ for sound in sounds:
     label = sound[:-4]+'.png'
     new_path = os.path.join(current_directory, label)
     if not os.path.exists(new_path):
-        sound_to_spec(sound)
+        sound_to_spec(sound);

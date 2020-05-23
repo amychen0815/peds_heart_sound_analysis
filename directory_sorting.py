@@ -12,7 +12,7 @@ with open('REFERENCE.csv', mode='r') as infile:
 
 #Filter all files to leave only .wav
 current_directory = os.getcwd()
-sounds = [e for e in os.listdir("current_directory") if os.path.isfile(os.path.join(current_directory, e))]
+sounds = [e for e in os.listdir(current_directory) if os.path.isfile(os.path.join(current_directory, e))]
 wav_filter = []
 for sound in sounds:
     if sound[-4:] == ".wav" and sound not in wav_filter:
