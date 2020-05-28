@@ -70,7 +70,7 @@ def balance_dataset(data):
 
 #Randomizes new balanced dataset
 balanced_data = balance_dataset(training_data)
-random.shuffle(balanced_dat)
+random.shuffle(balanced_data)
 
 
 #Setting feature and label datasets
