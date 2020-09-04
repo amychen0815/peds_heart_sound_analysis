@@ -1,3 +1,4 @@
+#pip install ffmpeg
 import IPython.display as ipd
 import numpy as np
 import pandas as pd
@@ -36,7 +37,7 @@ def shannon_energy(dataset, sr):
 
 	Es = []
 	
-	while end_frame <= len(X):
+	while end_frame <= len(dataset):
 
 		curr = dataset[start_frame:end_frame]
 		
@@ -48,6 +49,9 @@ def shannon_energy(dataset, sr):
 
 
 	P_t = [x - mean(Es) for x in Es]
+
+
+	return spaceholder
 
 
 
@@ -85,10 +89,80 @@ def preprocess(audiofile):
 	plt.tight_layout()
 	plt.show()
 
+	print(type(filtered))
+
 	return filtered
 
 
 preprocess('a0002.wav')
+
+
+
+
+
+
+
+
+
+
+
+#Hackathon Truncation Code - may need for interception
+
+
+
+
+#Truncates .wav file into a shorter .wav file
+#Arguments: original is the original .wav file to be shortened (string, include .wav in the name)
+#			new should be the name of the new .wav fle (string, include .wav in the name) 
+# 			start is the start time in seconds
+#			end is the end time in seconds
+#The new .wav file will be exported in the same directory that this code is being run in 
+
+"""
+def truncate (original, new, start, end):
+	originalAudio = AudioSegment.from_wav(original)
+	newAudio = originalAudio[start*1000:end*1000]
+	newAudio.export(new, format = "wav")
+"""
+
+# truncate('b0002.wav','b000s.wav',0,5)
+
+
+"""
+wavFiles = []
+
+for filename in os.listdir(os.getcwd()):
+	# print(filename[-4:])
+	if filename[-4:] == ".wav" and filename[-5:] != "s.wav":
+		new_name = filename[:-4]+'s'+filename[-4:]
+		truncate(filename,new_name,0,25)
+		wavFiles.append(new_name)
+
+
+
+source = "/Users/yunchanchen/Documents/Project/training-a"
+dest1 = "/Users/yunchanchen/Documents/Project/training-a/sound_20s"
+
+files = os.listdir(source)
+
+for f in files:
+	if f in wavFiles:
+		shutil.move(source+"/"+f, dest1)
+
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
