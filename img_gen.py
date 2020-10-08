@@ -79,7 +79,7 @@ def sound_to_spec(audiofile):
     hop_length = 512
     n_mels = 128
     
-    S = librosa.feature.melspectrogram(filtered, sr=sr, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels)
+    S = librosa.feature.melspectrogram(filtered, sr=sr, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels, fmax=800)
     S_DB = librosa.power_to_db(S, ref=np.max)
     plt.figure();
     #add x_axis='time', y_axis='mel' in the function to see x = Time, y = Hertz

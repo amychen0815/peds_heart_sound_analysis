@@ -36,12 +36,11 @@ def create_training_data():
 create_training_data()            
 
 
-            
+ """           
 #bootstrapping to balance dataset if unbalanced
 def balance_dataset(data):
     """
-    boostrapping to balance binary dataset
-    may need to think through for multi-class
+    #boostrapping to balance binary dataset may need to think through for multi-class
     """
         
     norm = [e for e in data if e[1] == 0] 
@@ -71,6 +70,11 @@ def balance_dataset(data):
 #Randomizes new balanced dataset
 balanced_data = balance_dataset(training_data)
 random.shuffle(balanced_data)
+"""
+
+
+
+balanced_data = random.shuffle(traning_data)
 
 
 #Setting feature and label datasets
